@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MyApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
 
     <!-- Bootstrap -->
     <link href="{% static 'vendor/bootstrap/bower_components/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
-
+    <link href="{% static 'vendor/my_css/custom.css' %}" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -20,13 +20,86 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <!-- Navigation for mobile devices only -->
+    <nav class="visible-xs-block navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Michaels Designs</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Brands&nbsp; <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Longines</a></li>
+                <li><a href="#">Tissot</a></li>
+                <li><a href="#">Hamilton</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Repairs&nbsp; <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Jewellery</a></li>
+                <li><a href="#">Watches</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+<!-- Navigation for Desktops only -->
+  <div class="container">
+    <div class="col-md-5 col-sm-5 visible-md-block visible-lg-block visible-sm-block"><h3>Michaels Designs<h3></div>
+    <div class="col-md-5 col-md-offset-2 visible-md-block visible-lg-block visible-sm-block">
+      <ul class="nav nav-pills nav-justified">
+        <li><a href="#">Anniversary</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-4 visible-md-block visible-lg-block visible-sm-block" data-spy="affix">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li class="dropdown" role="presentation"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" id="dropdownMenu2" aria-haspopup="true" aria-expanded="true">Brands&nbsp;<span class="caret"></span></a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><a href="#">Longines</a></li>
+          <li><a href="#">Tissot</a></li>
+          <li><a href="#">Hamilton</a></li>
+        </ul>
+      </li>
+      <li class="dropdown" role="presentation"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" id="dropdownMenu1" aria-haspopup="true" aria-expanded="true">Repairs&nbsp;<span class="caret"></span></a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Jewellery</a></li>
+          <li><a href="#">Watches</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+
+
     {% block content %}{% endblock %}
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src=""></script>
+    
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{% static 'vendor/angular/bower_components/angular/angular.js' %}"></script>
     <script src="{% static 'vendor/angular/bower_components/angular/app.js' %}"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{% static 'vendor/bootstrap/bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
   </body>
 </html>
