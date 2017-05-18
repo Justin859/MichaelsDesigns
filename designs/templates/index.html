@@ -1,98 +1,122 @@
 {% extends "base.html" %}
 {% load static%}
+{% load design_extras %}
 {% block content %}
 
-<!-- Mobile caeousel -->
-    <div class="visible-xs-block" style="margin-top: 50px;">
-      <div id="carousel-mobile" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-mobile" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-mobile" data-slide-to="1"></li>
-          <li data-target="#carousel-mobile" data-slide-to="2"></li>
-          <li data-target="#carousel-mobile" data-slide-to="3"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img src="{% static 'images/carousel/banner_2.jpg' %}" alt="...">
-          </div>
-          <div class="item">
-            <img src="{% static 'images/carousel/jewellery.jpg' %}" alt="...">
-
-          </div>
-          <div class="item">
-            <img src="{% static 'images/carousel/movado.jpg' %}" alt="...">
-
-          </div>
-          <div class="item">
-            <img src="{% static 'images/carousel/tissot.jpg' %}" alt="...">
-
-          </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-mobile" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#carousel-mobile" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-<div class="container">
-  <div class="visible-md-block visible-sm-block visible-lg-block col-md-8 col-md-offset-4 col-sm-8 col-sm-offset-4">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
+<div class="row hidden-sm-down"><!-- carousel for desktop and tablet -->
+  <div class="col">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
       </ol>
-
-      <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="{% static 'images/carousel/banner_2.jpg' %}" alt="...">
+        <div class="carousel-item active">
+          <img class="d-block img-fluid" src="{% static 'images/carousel/banner_2.jpg' %}" alt="First slide">
         </div>
-        <div class="item">
-          <img src="{% static 'images/carousel/jewellery.jpg' %}" alt="...">
-
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="{% static 'images/carousel/jewellery.jpg' %}" alt="Second slide">
         </div>
-        <div class="item">
-          <img src="{% static 'images/carousel/movado.jpg' %}" alt="...">
-
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="{% static 'images/carousel/banner_3.jpg' %}" alt="Third slide">
         </div>
-        <div class="item">
-          <img src="{% static 'images/carousel/tissot.jpg' %}" alt="...">
-
-        </div>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="{% static 'images/carousel/tissot.jpg' %}" alt="Third slide">
+        </div>    
       </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
     </div>
-    
   </div>
-</div>    
+</div>
+<br />
 
+<div class="hidden-md-up" style="margin-top: 35px; margin-bottom: 15px;"><!-- carousel for Mobile -->
+  <div id="carouselMobile" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselMobile" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselMobile" data-slide-to="1"></li>
+      <li data-target="#carouselMobile" data-slide-to="2"></li>
+      <li data-target="#carouselMobile" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <img class="d-block img-fluid" src="{% static 'images/carousel/banner_2.jpg' %}" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block img-fluid" src="{% static 'images/carousel/jewellery.jpg' %}" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block img-fluid" src="{% static 'images/carousel/banner_3.jpg' %}" alt="Third slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block img-fluid" src="{% static 'images/carousel/tissot.jpg' %}" alt="Third slide">
+      </div>    
+    </div>
+    <a class="carousel-control-prev" href="#carouselMobile" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-sm-8 col-md-offset-4 col-sm-offset-4">
-
+<div class="row">
+  <div class="col">
+    <img src="{% static 'images/michaels_designs/logo.png' %}" alt="Michaels Designs Logo" style="float: left; padding-right: 5px;">
+      <p><b>Michael’s Designs</b> is an exclusive jewellery store situated in <a href="http://www.fourwaysmall.com/store/michaels-designs/321"> Fourways Mall</a></p>
+      <p> in Johannesburg. They specialise in superior quality individually</p>
+      <p>handcrafted jewellery.</p>
+      <p>Michael’s Designs has been creating fine jewellery for over two decades.</p>
+      <p>Their handcrafted jewellery is sought by discerning jewellery buyers both </p>
+      <p>locally and internationally.</p>
+      <p>Visit their stores in Fourways Mall to view their sparkling collection.</p>
+   </div>
+</div>
+<hr>
+<!-- Mobile Birth stones -->
+<div class="hidden-md-up">
+  {% for stone in birthstones %}
+  <li class="list-group-item"><a href="#" data-toggle="modal" data-target={{stone.stone_name|add_id}}1>{{stone.stone_month|month_finder}} - {{stone.stone_name}}</a></li>
+  <!-- Modal -->
+  <div class="modal fade" id={{stone.stone_name}}1 tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id={{stone.stone_name}}>{{stone.stone_name}} Month - {{stone.stone_month|month_finder}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-4"></div>
+            <div class="col"><img src={{stone.stone_photo|img_src}}></div>
+          </div>
+          <div class="row">
+            <div class="col">{{stone.description|markdown_to_html}}</div>
+          </div> 
+          <div class="row">
+            <div class="col">{{stone.cleaning_tips|markdown_to_html}}</div>
+          </div> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+{% endfor %}
 {% endblock %}

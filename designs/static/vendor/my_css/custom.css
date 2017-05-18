@@ -1,0 +1,19 @@
+.flex-column .active {
+    background-color: rgb(63, 127, 191);
+    color: white;
+}
+
+.flex-column .active:hover {
+    color: black;
+}
+
+.flex-column .nav-link:hover {
+    background-color: rgba(63, 127, 191, 0.4);
+    color: black;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev{
+ display:block !important;
+}
