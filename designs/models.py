@@ -22,3 +22,19 @@ class Birth_Stones(models.Model):
     def __str__(self):
         return self.stone_name
 
+class Premier_Brands(models.Model):
+
+    brand_name = models.CharField(max_length=255, primary_key=True)
+    brand_main_photo = models.ImageField(upload_to='designs/static/images/premier_brands/brand_main_photo', max_length=255, null=True)
+    brand_logo = models.ImageField(upload_to='designs/static/images/premier_brands/brand_logo', max_length=255, null=True)
+    brand_description = models.TextField()
+    
+
+    class Meta:
+        verbose_name = 'Premier Brand'
+        verbose_name_plural = 'Premier Brands'
+
+    def __str__(self):
+        return self.brand_name
+ 
+

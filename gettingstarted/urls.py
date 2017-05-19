@@ -12,4 +12,7 @@ import designs.views
 urlpatterns = [
     url(r'^$', designs.views.index, name='index'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^about/', designs.views.about, name='about'),
+    url(r'^contact/', designs.views.contact, name='contact'),
+    url(r'^premier-brand/(?P<premier_brand_name>[\w\-\s]+)/$', designs.views.detail, name='detail'),
 ]

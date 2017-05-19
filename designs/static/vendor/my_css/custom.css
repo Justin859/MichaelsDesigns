@@ -12,8 +12,19 @@
     color: black;
 }
 
+.nav-justified .nav-item .nav-link:hover {
+    background-color: rgba(63, 127, 191, 0.4);
+    color: black;    
+}
+
+.nav-pills .nav-item .active {
+    background-color: rgb(63, 127, 191);
+    color: white;
+}
+
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev{
  display:block !important;
 }
+

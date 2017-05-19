@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Michael’s Designs| {{brand.brand_name}}{% endblock %}
+{% load static%}
+{% load design_extras %}
+
+{% block content %}
+
+<!-- Desktop and Tablet -->
+<div class="col-md-9 hidden-sm-down">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center display-4">{{brand.brand_name}}</h1>
+            <hr>
+            <img src="../../{{brand.brand_main_photo|img_src}}" class="img-fluid">
+            <hr>
+            <br />
+            <blockquote class="blockquote">{{brand.brand_description}}</blockquote>
+            <br />
+            <img src="../../{{brand.brand_logo|img_src}}" class="img-fluid img-thumbnail">
+            <hr>
+        </div>
+    </div>
+</div>
+<!-- Mobile -->
+<div class="hidden-md-up col-xs-12" style="margin-top: 50px;">
+    <div class="container-fluid">
+        <h1 class="text-center display-4">{{brand.brand_name}}</h1>
+        <hr>
+        <img src="../../{{brand.brand_main_photo|img_src}}" class="img-fluid">
+        <hr>
+        <br />
+        <blockquote class="blockquote">{{brand.brand_description}}</blockquote>
+        <br />
+        <img src="../../{{brand.brand_logo|img_src}}" class="img-fluid img-thumbnail">
+        <hr>
+    </div>
+</div>
+
+{% endblock %}

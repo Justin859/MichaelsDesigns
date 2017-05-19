@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'vendor/bootstrap4/bower_components/bootstrap/dist/css/bootstrap.min.css' %}" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'vendor/my_css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}">
+    <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
     <!-- Navigation for desktop and tablet -->
@@ -18,12 +19,20 @@
       <div class="row hidden-sm-down">
         <div class="col">
           <p style="float: left; padding-top: 10px;"><img src="{% static 'images/michaels_designs/logo.png' %}" height="37.25" width="65"></p>
-          <p><h4>&nbsp;Michaels Designs</h4></p>
+          <p><h4>&nbsp;Michael's Designs</h4></p>
         </div>
         <div class="col">
           <ul class="nav nav-pills nav-justified" style="padding-top: 10px;">
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            {% if request.get_full_path == '/about/' %}
+              <li class="nav-item"><a class="nav-link active" href="/about/">About</a></li>
+            {% else %}
+              <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+            {% endif %}
+            {% if request.get_full_path == '/contact/' %}
+              <li class="nav-item"><a class="nav-link active" href="/contact/">Contact</a></li>
+            {% else %}
+              <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
@@ -38,16 +47,22 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
+          {% if request.get_full_path == '/' %}
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>          
+          {% endif %}
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Premier Brands</a>
             <div class="dropdown-menu" aria-labelledby="dropdown02">
-              <a class="dropdown-item" href="#">Longines</a>
-              <a class="dropdown-item" href="#">Tissot</a>
-              <a class="dropdown-item" href="#">Hamilton</a>
-              <a class="dropdown-item" href="#">Mont Blanc</a>
+              {% for brand in premier_brands %}
+              <a class="dropdown-item" href="/premier-brand/{{brand.brand_name}}">{{brand.brand_name}}</a>
+              {% endfor %}
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -57,24 +72,37 @@
               <a class="dropdown-item" href="#">Watches</a>
             </div>
           </li>
-          <li><a class="nav-link" href="#">Wedding Anniversary</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Wedding Anniversary</a></li>
+          {% if request.get_full_path == '/about/' %}
+            <li class="nav-item active"><a class="nav-link active" href="/about/">About</a></li>
+          {% else %}  
+          <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+          {% endif %}
+          {% if request.get_full_path == '/contact/' %}
+            <li class="nav-item active"><a class="nav-link active" href="/contact/">Contact</a></li>
+          {% else %}  
+          <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
-
+<!-- Navigation for Desktop and Tablet -->
     <div class="container-fluid">
         <div class="row">
           <div class="col hidden-sm-down">
             <nav class="nav flex-column">
-              <a class="nav-link active" href="#">Home</a>
+              {% if request.get_full_path == '/' %}
+                <a class="nav-link active" href="/">Home</a>
+              {% else %}
+                <a class="nav-link" href="/">Home</a>
+              {% endif %}
               <a class="nav-link" href="#collapsePremierBrands" data-toggle="collapse" aria-expanded="false">Premier Brands&nbsp;&nbsp;<span class="fa fa-angle-down"></span></a>
               <div class="collapse" id="collapsePremierBrands">
                 <div class="card">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="#">Longines</a></li>
-                    <li class="list-group-item"><a href="#">Tissot</a></li>
-                    <li class="list-group-item"><a href="#">Hamilton</a></li>
-                    <li class="list-group-item"><a href="#">Mont Blanc</a></li>
+                    {% for brand in premier_brands %}
+                    <li class="list-group-item"><a href="/premier-brand/{{brand.brand_name}}/">{{brand.brand_name}}</a></li>
+                    {% endfor %}
                   </ul>
                 </div>
               </div>
@@ -128,7 +156,7 @@
               </div>
             </nav>
           </div>
-          <div class="col-md-9">{% block content %}{% endblock %}</div>
+          {% block content %}{% endblock %}
         </div>
     </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
