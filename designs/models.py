@@ -1,5 +1,7 @@
 from django.db import models
+from django.utils.timezone import datetime
 
+from django.forms import ModelForm
 # Create your models here.
 
 class Birth_Stones(models.Model):
@@ -36,5 +38,23 @@ class Premier_Brands(models.Model):
 
     def __str__(self):
         return self.brand_name
- 
+
+class ClientQuery(models.Model):
+    
+    full_name = models.CharField(max_length=255)
+    email_address = models.EmailField(max_length=255)
+    client_query = models.TextField(max_length=1001)
+    sent_at = models.DateField(auto_now_add=True, editable=False)
+
+    class Meta:
+        verbose_name = 'Client Query'
+        verbose_name_plural = 'Client Queries'
+
+    def __str__(self):
+        return str(self.sent_at) + " : " + self.email_address
+
+class ClientForm(ModelForm):
+    class Meta:
+        model = ClientQuery
+        fields = ['full_name', 'email_address', 'client_query']
 

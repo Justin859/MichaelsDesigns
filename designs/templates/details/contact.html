@@ -6,11 +6,115 @@
 {% block content %}
 
 <!-- Desktop and Tablet -->
-<div class="col-md-9 hidden-sm-down"><h1>Hello from the contact page</h1></div>
-<!-- Mobile -->
-<div class="hidden-md-up col-xs-12" style="margin-top: 50px;">
-    <div class="container-fluid">
-        <h1>Hello from the contact page</h1>
+<div class="col-md-9 col-xs-12">
+    <div class="row">
+        <div class="col">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>{{ message }}</strong> 
+                </div>
+            {% endfor %}
+        {% endif %}            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="container" id="map"></div>
+        </div>  
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>We would love to hear from you!</h3>
+        </div>
+        <div class="col-md-6 hidden-sm-down">
+            <h3>Submit a Query</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <hr>
+            <div class="card">
+                <div class="card-header">Visit us at</div>
+                <div class="card-block">
+                    <p class="card-text"><a href="http://www.fourwaysmall.com/store/michaels-designs/321">Shop G87, Fourways Mall, Sandton, South Africa</a></p>
+                </div>
+            </div>
+            <hr>
+            <div class="card">
+                <div class="card-header">Call us on</div>
+                <div class="card-block">
+                    <p class="card-text">011 465 6446/7 (Fourways Mall)</p>
+                </div>
+            </div>
+            <hr>
+            <div class="card">
+                <div class="card-header">Send us a Fax</div>
+                <div class="card-block">
+                    <p class="card-text">011 465 6448</p>
+                </div>
+            </div>
+            <hr>
+            <div class="card">
+                <div class="card-header">You can also email us at</div>
+                <div class="card-block">
+                    <p class="card-text"><a href="mailto:info@michaelsdesigns.co.za">info@michaelsdesigns.co.za</a></p>
+                </div>
+            </div>
+            <hr>
+            <div class="card">
+                <div class="card-header">Should you wish to send us something</div>
+                <div class="card-block">
+                    <p class="card-text">P.O. Box 68568<br/>Bryanston<br/>2021<br/>South Africa</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="col hidden-sm-up">
+            <h3>Submit a Query</h3>
+        </div>  
+        <div class="col-md-6">
+            <hr>
+            <form name="form" action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="full_name">Your Name</label>
+                    <input type="text" name="full_name" class="form-control" placeholder="your full name" required/>
+                </div>
+                <div class="form-group">
+                    <label for="email_address">Your Email Address</label>
+                    <input type="email" name="email_address" class="form-control" placeholder="your email address" required/>
+                </div>
+                <div class="form-group">
+                    <label for="query">Your Query</label>
+                    <textarea type="textarea" name="client_query" class="form-control" maxlength="1001" placeholder="your query" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-primary">Send</button>
+            </form>
+        </div>
     </div>
 </div>
+<!-- Mobile -->
+
+
+
+
+<script>
+    function initMap() {
+        var uluru = { lat:-26.0199572, lng: 28.007406100000026};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map : map
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUGbVg0er5HiP_5ARNdlabdkoJIs2ERjI&callback=initMap"></script>
 {% endblock %}

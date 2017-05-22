@@ -22,9 +22,25 @@
     color: white;
 }
 
+.nav .nav-item {
+    margin-left: 5px;
+}
+
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev{
  display:block !important;
 }
 
+#map {
+    height: 300px;
+}
+
+textarea {
+    resize: none;
+    height: 250px;
+}
+
+.btn-outline-primary {
+    width: 100%;
+}
