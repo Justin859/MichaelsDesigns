@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}">
     <title>{% block title %}{% endblock %}</title>
   </head>
-  <body>
+  <body id="top_page">
     <!-- Navigation for desktop and tablet -->
     <div class="container-fluid">
       <div class="row hidden-sm-down">
@@ -197,6 +197,32 @@
             </nav>
           </div>
           {% block content %}{% endblock %}
+        </div>
+    </div>
+    <br>
+    <div class="footer-div col-md-12">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <a href="#top_page"><span class="fa fa-angle-double-up fa-2x"></span></a>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col col-xs-12">
+              <a href="/contact/" class="btn btn-outline-primary btn-block">Contact Us&nbsp;&nbsp;<span class="fa fa-phone"></span><span>&nbsp;&nbsp;<span class="fa fa-envelope-open"></span></a>
+              <a href="/signup/" class="btn btn-outline-primary btn-block">Sign up to our news letter&nbsp;&nbsp;<span class="fa fa-envelope-o"></span></a>
+            </div>
+            <div class="col col-xs-12 text-center">
+              <br class="hidden-md-up">
+              <a href="https://www.facebook.com/MichaelsDesigns/"><span class="fa fa-facebook-official fa-3x"></span></a>
+              <p>Find us on Facebook</p>
+            </div>
+            <div class="col-xs-12">
+
+            </div>
+          </div>
+          <br>
         </div>
     </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
