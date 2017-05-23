@@ -15,6 +15,11 @@ def about(request):
     premier_brands = Premier_Brands.objects.order_by('brand_name')
     return render(request, 'details/about.html', {'birthstones': birthstones, 'premier_brands': premier_brands})
 
+def product(request):
+    birthstones = Birth_Stones.objects.order_by('stone_month')
+    premier_brands = Premier_Brands.objects.order_by('brand_name')
+    return render(request, 'details/product.html', {'birthstones': birthstones, 'premier_brands': premier_brands})
+
 def contact(request):
     birthstones = Birth_Stones.objects.order_by('stone_month')
     premier_brands = Premier_Brands.objects.order_by('brand_name')

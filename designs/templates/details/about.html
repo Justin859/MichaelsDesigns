@@ -1,12 +1,49 @@
 {% extends "base.html" %}
-{% block title %}Michael’s Designs| About{% endblock %}
+{% block title %}Michael’s Designs | About{% endblock %}
 {% load static%}
 {% load design_extras %}
 
 {% block content %}
 
 <!-- Desktop and Tablet -->
-<div class="col-md-9 hidden-sm-down"><h1>Hello from the About page</h1></div>
+<div class="col-md-9">
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="hidden-md-up" style="margin-bottom: 60px;"></div>
+            <p style="float: left;"><img class="img-fluid hidden-md-down" src="{% static 'images/michaels_designs/logo.png' %}" height="87.25" width="135">&nbsp;&nbsp;</p>
+            <p><h1 class="display-4">Michael's Designs</h1></p>
+        </div>
+        <br>
+        <hr>
+        <h5 class="text-center"><strong>Michael’s Designs has been in business for more than twenty years. 
+            During this time it has established itself as one of the most reputable jewellery stores in Johannesburg.</strong></h5>
+        <br>
+        <blockquote class="blockquote">
+            The owner, Michael Maack, is a South African of German extract. Over serving a four-year apprenticeship, then followed by a short career at a well-known Johannesburg jeweller,
+            he established his manufacturing business in 1989.
+            The business has gone from strength to strength and has become associated with craftsmanship and quality designs throughout the jewellery world.
+        </blockquote>
+        <br>
+        <blockquote class="blockquote">
+            Michael is a Goldsmith Laureate and has won awards for both design and wearability. Michael concentrates his designs on classical beauty with
+            harmony and balance which ensures that his creations are both striking and timeless. Each piece of jewellery is handcrafted to perfection. Priority is
+            given to sourcing the best-quality gems. Only top quality natural stones and precious metals are used for the designs. No artificial and man-made gems
+            are sold at Michael’s Designs.
+        </blockquote>
+        <br>
+        <blockquote class="blockquote">
+            In recognition of their excellence as Jewellers and Retailers Michael’s Designs has been awarded agencies for a number of top brands. These brands
+            include Festina, Maurice Lacroix and Mont Blanc. They are also one of the select agents who sell the sought after Puzzle rings.
+        </blockquote>
+        <br>
+        <blockquote class="blockquote">
+            The staff at Michael’s Designs are both friendly, helpful and knowledgeable about the jewellery and brands which they sell. Michael strives to instil a
+            culture of professionalism amongst his staff. Michael’s Designs is truly a personalised jewellery store which pays attention to detail.
+        </blockquote>
+        <br>
+        <hr>
+    </div>
+</div>
 <!-- Mobile -->
 <div class="hidden-md-up col-xs-12" style="margin-top: 50px;">
     <div class="container-fluid">

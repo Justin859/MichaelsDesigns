@@ -44,3 +44,7 @@ textarea {
 .btn-outline-primary {
     width: 100%;
 }
+
+#designMobile, #metalsMobile, #stonesMobile {
+    padding-top: 60px;
+}

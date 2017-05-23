@@ -20,6 +20,11 @@ def markdown_to_html(markdown_text):
     html_body = markdown2.markdown(markdown_text)
     return mark_safe(html_body)
 
+@register.filter('path_single')
+def path_single(main_path):
+    '''Gets main path of url path'''
+    return main_path.split('/')[1]
+
 @register.filter(name="month_finder")
 def month_finder(value):
     if value == 1:
