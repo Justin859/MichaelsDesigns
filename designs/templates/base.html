@@ -1,7 +1,7 @@
 {% load static %}
 {% load design_extras %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MyApp" ng-controller="MyAppController">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -229,5 +229,8 @@
     <script src="{% static 'vendor/bootstrap4/bower_components/jquery/dist/jquery.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="{% static 'vendor/bootstrap4/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendor/angular/bower_components/angular/angular.min.js' %}"></script>
+    <script src="{% static 'vendor/angular/bower_components/angular/app.js' %}"></script>
+
   </body>
 </html>

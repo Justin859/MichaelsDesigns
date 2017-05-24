@@ -110,6 +110,15 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+# Email settings
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = "smtp-mail.outlook.com"
+EMAIL_HOST_USER = "yourdeveloper@outlook.com"
+EMAIL_HOST_PASSWORD = "Monkeywrench#3"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Update database configuration with $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)

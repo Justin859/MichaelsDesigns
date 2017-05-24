@@ -80,7 +80,7 @@
         </div>  
         <div class="col-md-6">
             <hr>
-            <form name="form" action="" method="POST">
+            <form name="form" ng-submit="check(form.$valid)" action="" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="full_name">Your Name</label>
@@ -94,7 +94,7 @@
                     <label for="query">Your Query</label>
                     <textarea type="textarea" name="client_query" class="form-control" maxlength="1001" placeholder="your query" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-outline-primary">Send</button>
+                <button type="submit" id="submit" class="btn btn-outline-primary" ng-disabled="isDisabled">Send</button>
             </form>
             <hr>
         </div>
