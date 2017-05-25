@@ -1,3 +1,7 @@
+.navbar-brand {
+    font-family: "Platino Linotype";
+}
+
 .flex-column .active {
     background-color: rgb(63, 127, 191);
     color: white;
@@ -45,11 +49,19 @@ textarea {
     width: 100%;
 }
 
-#designMobile, #metalsMobile, #stonesMobile {
-    padding-top: 60px;
+#stonesMobile, #metalsMobile, #designMobile {
+    padding-top: 50px;
 }
 
 .footer-div {
     background-color: rgba(0, 0, 0, 0.1);
     padding: 15px;
+}
+
+thead {
+    color: white;
+}
+
+.bg-color {
+    background-color: rgb(63, 127, 191);
 }

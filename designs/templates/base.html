@@ -43,7 +43,7 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Michaels Designs</a>
+      <a class="navbar-brand" href="#">Michael's Designs</a>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
@@ -87,14 +87,28 @@
               <a class="dropdown-item" href="/product/#stonesMobile">Stones</a>
             </div>
           </li>
+          {% if request.get_full_path == '/services/' %}
+          <li class="nav-item dropdown active">
+          {% else %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Repairs</a>
+          {% endif %} 
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Jewellery</a>
-              <a class="dropdown-item" href="#">Watches</a>
+              <a class="dropdown-item" href="/services/#watch-repair-mobile">Watches</a>
+              <a class="dropdown-item" href="/services/#jewellery-repair-mobile">Jewellery</a>
             </div>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">Wedding Anniversary</a></li>
+          {% if request.get_full_path == '/anniversary-gift-list/' %}
+          <li class="nav-item dropdown active">
+          {% else %}
+          <li class="nav-item dropdown">
+          {% endif %}
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Anniversary Gift List</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown05">
+              <a class="dropdown-item" href="/anniversary-gift-list/#traditionalMobile">Traditional</a>
+              <a class="dropdown-item" href="/anniversary-gift-list/#jewelleryMobile">Jewellery</a>
+            </div>
+          </li>
           {% if request.get_full_path == '/about/' %}
             <li class="nav-item active"><a class="nav-link active" href="/about/">About</a></li>
           {% else %}  
@@ -146,16 +160,32 @@
                   </ul>
                 </div>
               </div>
-              <a class="nav-link" href="#collapseRepairs" data-toggle="collapse" aria-expanded="false">Repairs&nbsp;&nbsp;<span class="fa fa-angle-down"></span></a>
+              {% if request.get_full_path == '/services/' %}
+              <a class="nav-link active" href="#collapseRepairs" data-toggle="collapse" aria-expanded="false">Services&nbsp;&nbsp;<span class="fa fa-angle-down"></span></a>
+              {% else %}
+              <a class="nav-link" href="#collapseRepairs" data-toggle="collapse" aria-expanded="false">Services&nbsp;&nbsp;<span class="fa fa-angle-down"></span></a>
+              {% endif %}
               <div class="collapse" id="collapseRepairs">
                 <div class="card">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="#">Jewellery</a></li>
-                    <li class="list-group-item"><a href="#">Watches</a></li>
+                    <li class="list-group-item"><a href="/services/#watch-repair">Watches</a></li>
+                    <li class="list-group-item"><a href="/services/#jewellery-repair">Jewellery</a></li>
                   </ul>
                 </div>
               </div>
-              <a class="nav-link" href="#">Wedding Anniversary</a>
+              {% if request.get_full_path == '/anniversary-gift-list/' %}
+              <a class="nav-link active" href="#collapseAnniversary" data-toggle="collapse" aria-expanded="false">Anniversary Gift List&nbsp;&nbsp;<span class="fa fa-angle-down"></span></a>
+              {% else %}
+              <a class="nav-link" href="#collapseAnniversary" data-toggle="collapse" aria-expanded="false">Anniversary Gift List&nbsp;&nbsp;<span class="fa fa-angle-down"></span></a>
+              {% endif %}
+              <div class="collapse" id="collapseAnniversary">
+                <div class="card">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="/anniversary-gift-list/#traditional">Traditional</a></li>
+                    <li class="list-group-item"><a href="/anniversary-gift-list/#jewellery">Jewellery</a></li>
+                  </ul>
+                </div>
+              </div>
               <a class="nav-link" href="#collapseBirthStones" data-toggle="collapse" aria-expanded="false">Birth Stones&nbsp;&nbsp;<span class="fa fa-angle-down"></span></a>
               <div class="collapse" id="collapseBirthStones">
                 <div class="card">
@@ -200,7 +230,8 @@
         </div>
     </div>
     <br>
-    <div class="footer-div col-md-12">
+    <div class="row footer-div">
+      <div class="col-md-12">
         <div class="container">
           <div class="row">
             <div class="col text-center">
@@ -209,21 +240,23 @@
           </div>
           <hr>
           <div class="row">
-            <div class="col col-xs-12">
-              <a href="/contact/" class="btn btn-outline-primary btn-block">Contact Us&nbsp;&nbsp;<span class="fa fa-phone"></span><span>&nbsp;&nbsp;<span class="fa fa-envelope-open"></span></a>
-              <a href="/signup/" class="btn btn-outline-primary btn-block">Sign up to our news letter&nbsp;&nbsp;<span class="fa fa-envelope-o"></span></a>
+            <div class="col-md-6">
+              <a href="/contact/" class="btn btn-outline-primary btn-block">
+              Contact Us&nbsp;&nbsp;<span class="fa fa-phone"></span>
+              &nbsp;&nbsp;<span class="fa fa-envelope-open"></span>
+              </a>
+          <a href="/signup/" class="btn btn-outline-primary btn-block">
+          Sign up to our news letter&nbsp;&nbsp;<span class="fa fa-envelope-o"></span>
+          </a>
             </div>
-            <div class="col col-xs-12 text-center">
+            <div class="col-md-6 text-center">
               <br class="hidden-md-up">
               <a href="https://www.facebook.com/MichaelsDesigns/"><span class="fa fa-facebook-official fa-3x"></span></a>
               <p>Find us on Facebook</p>
             </div>
-            <div class="col-xs-12">
-
-            </div>
-          </div>
-          <br>
+          </div>  
         </div>
+      </div>
     </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="{% static 'vendor/bootstrap4/bower_components/jquery/dist/jquery.min.js' %}"></script>

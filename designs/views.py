@@ -55,3 +55,12 @@ def detail(request, premier_brand_name):
     brand = get_object_or_404(Premier_Brands, pk=premier_brand_name)
     return render(request, 'brands/detail.html', {'brand': brand, 'birthstones': birthstones, 'premier_brands': premier_brands})
 
+def services(request):
+    birthstones = Birth_Stones.objects.order_by('stone_month')
+    premier_brands = Premier_Brands.objects.order_by('brand_name')
+    return render(request, 'repairs/services.html', {'birthstones': birthstones, 'premier_brands': premier_brands})
+
+def anniversary(request):
+    birthstones = Birth_Stones.objects.order_by('stone_month')
+    premier_brands = Premier_Brands.objects.order_by('brand_name')
+    return render(request, 'anniversary.html', {'birthstones': birthstones, 'premier_brands': premier_brands})
