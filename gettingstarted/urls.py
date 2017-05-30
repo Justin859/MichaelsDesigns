@@ -17,5 +17,6 @@ urlpatterns = [
     url(r'^product/', designs.views.product, name='product'),
     url(r'^services/', designs.views.services, name='services'),
     url(r'^anniversary-gift-list', designs.views.anniversary, name="anniversary"),
+    url(r'^signup-to-newsletter', designs.views.newsletter_signup, name="newsletter-signup"),
     url(r'^premier-brand/(?P<premier_brand_name>[\w\-\s]+)/$', designs.views.detail, name='detail'),
 ]
