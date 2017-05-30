@@ -128,7 +128,7 @@ DATABASES['default'].update(db_from_env)
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
-ALLOWED_HOSTS = ['127.0.0.1', 'https://serene-inlet-21470.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'serene-inlet-21470.herokuapp.com']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
