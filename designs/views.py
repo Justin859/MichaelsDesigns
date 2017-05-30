@@ -66,7 +66,7 @@ def newsletter_signup(request):
             email = form.cleaned_data['email']
 
             try:
-                API_KEY = '732e2374429605b729e81cb2c98b00a9-us16'
+                API_KEY = '4cee8f4770c4852612e5dfa873070cd1-us16'
                 LIST_KEY = '93b0db5146'
 
                 api = mailchimp.Mailchimp(API_KEY)
