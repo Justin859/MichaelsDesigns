@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 
 from django.core.mail import send_mail, BadHeaderError
-from forms import NewsletterForm
+from .forms import NewsletterForm
 from .models import Birth_Stones, Premier_Brands, ClientQuery, ClientForm
 # Create your views here.
 
