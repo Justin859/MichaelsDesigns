@@ -1,4 +1,4 @@
-{% load static %}
+{% load static from staticfiles %}
 {% load design_extras %}
 <!DOCTYPE html>
 <html lang="en" ng-app="MyApp" ng-controller="MyAppController">
@@ -205,7 +205,7 @@
                           <div class="modal-body">
                             <div class="row">
                               <div class="col-md-4"></div>
-                              <div class="col"><img src=../../{{stone.stone_photo|img_src}}></div>
+                              <div class="col"><img src="{% static 'designs' %}/{{stone.stone_photo|img_src}}" class="img-fluid"></div>
                             </div>
                             <div class="row">
                               <div class="col">{{stone.description|markdown_to_html}}</div>
