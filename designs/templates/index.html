@@ -158,7 +158,7 @@
                 <div class="modal-body">
                   <div class="row">
                     <div class="col-4"></div>
-                    <div class="col"><img src={{stone.stone_photo|img_src}}></div>
+                    <div class="col"><img src="{% static 'designs' %}/{{stone.stone_photo|img_src}}" class="img-fluid"></div>
                   </div>
                   <div class="row">
                     <div class="col">{{stone.description|markdown_to_html}}</div>

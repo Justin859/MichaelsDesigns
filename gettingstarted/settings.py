@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 import dj_database_url
 
+from secrets import *
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -114,19 +116,6 @@ USE_TZ = True
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_ACCESS_KEY_ID = 'AKIAIA3RMNG3CPHC5BZA'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'michaelsdesignsza'
-AWS_QUERYSTRING_AUTH = False
-# Email settings
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-EMAIL_HOST = "smtp-mail.outlook.com"
-EMAIL_HOST_USER = "yourdeveloper@outlook.com"
-EMAIL_HOST_PASSWORD = "Monkeywrench#3"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 
 # Update database configuration with $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)

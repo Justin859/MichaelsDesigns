@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from .forms import NewsletterForm
 from .models import Birth_Stones, Premier_Brands, ClientQuery, ClientForm
+from gettingstarted.secrets import *
 # Create your views here.
 
 def index(request):
@@ -66,8 +67,8 @@ def newsletter_signup(request):
             email = form.cleaned_data['email']
 
             try:
-                API_KEY = '4cee8f4770c4852612e5dfa873070cd1-us16'
-                LIST_KEY = '93b0db5146'
+                API_KEY = secret_api_key
+                LIST_KEY = secret_list_key
 
                 api = mailchimp.Mailchimp(API_KEY)
                 api.lists.subscribe(LIST_KEY, {'email': email}, merge_vars={'FNAME':fname,'LNAME':lname})
