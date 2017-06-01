@@ -67,11 +67,11 @@ def newsletter_signup(request):
             email = form.cleaned_data['email']
 
             try:
-                API_KEY = secret_api_key
-                LIST_KEY = secret_list_key
+                SECRET_API_KEY = secret_api_key
+                SECRET_LIST_KEY = secret_list_key
 
-                api = mailchimp.Mailchimp(API_KEY)
-                api.lists.subscribe(LIST_KEY, {'email': email}, merge_vars={'FNAME':fname,'LNAME':lname})
+                api = mailchimp.Mailchimp(SECRET_API_KEY )
+                api.lists.subscribe(SECRET_LIST_KEY, {'email': email}, merge_vars={'FNAME':fname,'LNAME':lname})
             except BadHeaderError:
                 return HttpResponse('Invalid Header found')
                 
