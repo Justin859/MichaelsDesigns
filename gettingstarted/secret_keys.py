@@ -18,3 +18,7 @@ EMAIL_USE_TLS = True
 
 SECRET_API_KEY = os.environ.get('SECRET_API_KEY')
 SECRET_LIST_KEY = os.environ.get('SECRET_LIST_KEY')
+
+# Django
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
