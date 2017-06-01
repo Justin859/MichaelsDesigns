@@ -7,4 +7,3 @@ grunt
 *.less
 node_modules
 nuget
-gettingstarted/secret_keys.py
