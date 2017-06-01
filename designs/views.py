@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from .forms import NewsletterForm
 from .models import Birth_Stones, Premier_Brands, ClientQuery, ClientForm
-from gettingstarted.secrets import *
+from .gettingstarted.secrets import *
 # Create your views here.
 
 def index(request):
