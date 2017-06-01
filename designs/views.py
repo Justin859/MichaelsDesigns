@@ -1,4 +1,7 @@
 import mailchimp
+import sys
+
+sys.path.append('./gettingstarted/')
 
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
@@ -7,7 +10,8 @@ from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from .forms import NewsletterForm
 from .models import Birth_Stones, Premier_Brands, ClientQuery, ClientForm
-from .gettingstarted.secrets import *
+from gettingstarted import secret_keys
+from secret_keys import *
 # Create your views here.
 
 def index(request):
@@ -67,11 +71,11 @@ def newsletter_signup(request):
             email = form.cleaned_data['email']
 
             try:
-                SECRET_API_KEY = secret_api_key
-                SECRET_LIST_KEY = secret_list_key
+                API_KEY = SECRET_API_KEY
+                LIST_KEY = SECRET_LIST_KEY
 
-                api = mailchimp.Mailchimp(SECRET_API_KEY )
-                api.lists.subscribe(SECRET_LIST_KEY, {'email': email}, merge_vars={'FNAME':fname,'LNAME':lname})
+                api = mailchimp.Mailchimp(API_KEY)
+                api.lists.subscribe(LIST_KEY, {'email': email}, merge_vars={'FNAME':fname,'LNAME':lname})
             except BadHeaderError:
                 return HttpResponse('Invalid Header found')
                 
