@@ -13,7 +13,8 @@ app.controller('MyAppController', function($scope){
 
     $scope.disableButton = function() {
         $scope.isDisabled = true;
-        document.getElementById('submit').innerHTML = "Sending...  Please Wait."
+        document.getElementById('submit').classList.add("fa fa-spinner fa-pulse fa-3x fa-fw")
+        document.getElementById('submit').innerHTML = "Sending..."
     }
 
     $scope.check = function(value) {
