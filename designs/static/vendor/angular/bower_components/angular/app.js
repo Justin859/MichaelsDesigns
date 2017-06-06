@@ -13,7 +13,9 @@ app.controller('MyAppController', function($scope){
 
     $scope.disableButton = function() {
         $scope.isDisabled = true;
-        document.getElementById('submitIcon').classList.add("fa-spinner fa-pulse fa-3x fa-fw");
+        document.getElementById('submitIcon').classList.add("fa-spinner");
+        document.getElementById('submitIcon').classList.add("fa-pulse");
+        document.getElementById('submitIcon').classList.add("fa-fw");
         document.getElementById('submit').innerHTML = "&nbsp;&nbsp;Sending...";
     }
 
