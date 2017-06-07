@@ -47,7 +47,7 @@ def contact(request):
             email_address = form.cleaned_data['email_address']
             client_query = form.cleaned_data['client_query']
             try:
-                send_mail('Online Query', email_address, 'yourdeveloper@outlook.com', ['justinhammond859@gmail.com'])
+                send_mail('Online Query', 'email: ' + email_address + '\n\nclient name: ' + full_name + '\n\nclient query: \n\n' + client_query, 'yourdeveloper@outlook.com', ['justinhammond859@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid Header found.')
 
@@ -79,7 +79,7 @@ def newsletter_signup(request):
             except BadHeaderError:
                 return HttpResponse('Invalid Header found')
                 
-            messages.success(request, 'Thank you for signing up for our newsletter! an email was sent to your for confirmation.')
+            messages.success(request, 'Thank you for signing up to our newsletter! An email was sent to you for confirmation.')
             return HttpResponseRedirect('/')
     else:
         form = NewsletterForm()
