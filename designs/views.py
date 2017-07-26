@@ -47,7 +47,7 @@ def contact(request):
             email_address = form.cleaned_data['email_address']
             client_query = form.cleaned_data['client_query']
             try:
-                send_mail('Online Query', 'email: ' + email_address + '\n\nclient name: ' + full_name + '\n\nclient query: \n\n' + client_query, 'yourdeveloper@outlook.com', ['justinhammond859@gmail.com'])
+                send_mail('Online Query', 'email: ' + email_address + '\n\nclient name: ' + full_name + '\n\nclient query: \n\n' + client_query, 'queries@michaelsdesigns.co.za', ['justin@yourdev.co.za'])
             except BadHeaderError:
                 return HttpResponse('Invalid Header found.')
 
