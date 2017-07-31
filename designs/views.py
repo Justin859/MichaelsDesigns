@@ -15,19 +15,16 @@ from secret_keys import *
 # Create your views here.
 
 def index(request):
-    birthstones = Birth_Stones.objects.order_by('stone_month')
-    premier_brands = Premier_Brands.objects.order_by('brand_name')
-    return render(request, 'index.html', {'birthstones': birthstones, 'premier_brands': premier_brands})
+
+    return render(request, 'index.html', {})
 
 def about(request):
-    birthstones = Birth_Stones.objects.order_by('stone_month')
-    premier_brands = Premier_Brands.objects.order_by('brand_name')
-    return render(request, 'details/about.html', {'birthstones': birthstones, 'premier_brands': premier_brands})
+
+    return render(request, 'details/about.html', {})
 
 def product(request):
-    birthstones = Birth_Stones.objects.order_by('stone_month')
-    premier_brands = Premier_Brands.objects.order_by('brand_name')
-    return render(request, 'details/product.html', {'birthstones': birthstones, 'premier_brands': premier_brands})
+
+    return render(request, 'details/product.html', {})
 
 def contact(request):
     birthstones = Birth_Stones.objects.order_by('stone_month')
@@ -55,7 +52,7 @@ def contact(request):
             return HttpResponseRedirect('/')
     else:
         form = ClientForm()
-    return render(request, 'details/contact.html', {'birthstones': birthstones, 'premier_brands': premier_brands, 'form': form})    
+    return render(request, 'details/contact.html', {'form': form})    
 
 def newsletter_signup(request):
     birthstones = Birth_Stones.objects.order_by('stone_month')
@@ -86,17 +83,13 @@ def newsletter_signup(request):
     return render(request, 'newsletter_signup.html', {'birthstones': birthstones, 'premier_brands': premier_brands, 'form': form})
 
 def detail(request, premier_brand_name):
-    birthstones = Birth_Stones.objects.order_by('stone_month')
-    premier_brands = Premier_Brands.objects.order_by('brand_name')
     brand = get_object_or_404(Premier_Brands, pk=premier_brand_name)
-    return render(request, 'brands/detail.html', {'brand': brand, 'birthstones': birthstones, 'premier_brands': premier_brands})
+    return render(request, 'brands/detail.html', {'brand': brand})
 
 def services(request):
-    birthstones = Birth_Stones.objects.order_by('stone_month')
-    premier_brands = Premier_Brands.objects.order_by('brand_name')
-    return render(request, 'repairs/services.html', {'birthstones': birthstones, 'premier_brands': premier_brands})
+
+    return render(request, 'repairs/services.html', {})
 
 def anniversary(request):
-    birthstones = Birth_Stones.objects.order_by('stone_month')
-    premier_brands = Premier_Brands.objects.order_by('brand_name')
-    return render(request, 'anniversary.html', {'birthstones': birthstones, 'premier_brands': premier_brands})
+    
+    return render(request, 'anniversary.html', {})
