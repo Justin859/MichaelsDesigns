@@ -55,8 +55,8 @@
   <!-- desktop and Tablet content -->
   <br />
   <div class="row">
-    <div class="col-md-6">
-      <img src="{% static 'images/michaels_designs/store_img.jpg' %}" alt="Michaels Designs Logo" class="img-fluid img-thumbnail">
+    <div class="col-md-6 text-center">
+      <img src="{% static 'images/michaels_designs/logo_2.png' %}" alt="Michaels Designs Logo" height="337" width="337" class="img-fluid">
     <hr>
     </div>
     <div class="col-md-6">
@@ -72,6 +72,49 @@
         <hr>
     </div>
   </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Social Feed</h3>
+        <hr>
+        <br>
+          <div class="fb-page" 
+            data-href="https://www.facebook.com/MichaelsDesigns"
+            data-width="500"
+            data-hide-cover="false"
+            data-show-facepile="false">
+          </div>
+        <hr>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+          <div 
+            class="fb-post"
+            data-href="{{facebook_feed.0}}">
+          </div>
+      </div>
+      <div class="col-12 col-lg-6">
+          <div 
+            class="fb-post"
+            data-href="{{facebook_feed.1}}">
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+          <div 
+            class="fb-post"
+            data-href="{{facebook_feed.2}}">
+          </div>
+      </div>
+      <div class="col-12 col-lg-6">
+          <div 
+            class="fb-post"
+            data-href="{{facebook_feed.3}}">
+          </div>
+      </div>
+    </div>
   <hr>
 </div>
 <br />

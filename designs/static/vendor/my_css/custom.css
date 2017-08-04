@@ -65,3 +65,13 @@ thead {
 .bg-color {
     background-color: rgb(63, 127, 191);
 }
+
+.fb-post {
+    width: 50px !important;
+    height: auto !important;
+    padding-bottom: 25px;
+}
+
+.fb-page {
+    padding-bottom: 25px;
+}

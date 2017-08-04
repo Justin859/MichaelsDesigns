@@ -266,6 +266,20 @@
         </div>
       </div>
     </div>
+
+    <!-- Facebook JS SDK  -->
+
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="{% static 'vendor/bootstrap4/bower_components/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'vendor/bootstrap4/bower_components/tether/dist/js/tether.min.js' %}"></script>
