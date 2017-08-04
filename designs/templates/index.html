@@ -119,7 +119,7 @@
 </div>
 <br />
 
-<div class="hidden-md-up col-xs-12" style="margin-top: 30px; margin-bottom: 15px;"><!-- carousel for Mobile -->
+<div class="hidden-md-up col-xs-12" style="margin-top: 30.2px; margin-bottom: 15px;"><!-- carousel for Mobile -->
       {% if messages %}
           {% for message in messages %}
               <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -166,7 +166,7 @@
 <div class="hidden-md-up">
     
     <div class="col text-center">
-      <img src="{% static 'images/michaels_designs/store_img.jpg' %}" alt="Michaels Designs Logo" class="img-fluid img-thumbnail">
+      <img src="{% static 'images/michaels_designs/logo_2.png' %}" alt="Michaels Designs Logo" height="337" width="337" class="img-fluid">
     </div>
     <blockquote class="blockquote">
       <p><b>Michael’s Designs</b> is an exclusive jewellery store situated in <a href="http://www.fourwaysmall.com/store/michaels-designs/321"> Fourways Mall</a></p>
@@ -177,6 +177,43 @@
       <p>locally and internationally.</p>
       <p>Visit their stores in Fourways Mall to view their sparkling collection.</p>
     </blockquote>
+    <div class="col">
+      <h3>Social Feed</h3>
+      <hr>
+      <br>
+        <div class="fb-page" 
+          data-href="https://www.facebook.com/MichaelsDesigns"
+          data-width="500"
+          data-hide-cover="false"
+          data-show-facepile="false">
+        </div>
+      <hr>
+      <br>
+    </div>
+    <div class="col">
+        <div 
+          class="fb-post"
+          data-href="{{facebook_feed.0}}">
+        </div>
+    </div>
+    <div class="col">
+        <div 
+          class="fb-post"
+          data-href="{{facebook_feed.1}}">
+        </div>
+    </div>
+    <div class="col">
+        <div 
+          class="fb-post"
+          data-href="{{facebook_feed.2}}">
+        </div>
+    </div>
+    <div class="col">
+        <div 
+          class="fb-post"
+          data-href="{{facebook_feed.3}}">
+        </div>
+    </div>
 </div>
 <hr>
 <!-- Mobile Birth stones -->
