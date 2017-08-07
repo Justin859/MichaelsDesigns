@@ -15,13 +15,14 @@
   </head>
   <body id="top_page">
     <!-- Navigation for desktop and tablet -->
-    <div class="container-fluid">
-      <div class="row hidden-sm-down">
-        <div class="col">
-          <p style="float: left; padding-top: 10px;"><img src="{% static 'images/michaels_designs/logo.png' %}" height="37.25" width="65"></p>
-          <p><h4>&nbsp;Michael's Designs</h4></p>
+
+    <div class="container-fluid hidden-sm-down">
+      <div class="row">
+        <div class="col-6">
+            <p style="float: left; padding-top: 10px;"><img src="{% static 'images/michaels_designs/logo.png' %}" height="37.25" width="65"></p>
+            <p><h4>&nbsp;Michael's Designs</h4></p>
         </div>
-        <div class="col">
+        <div class="col-6">
           <ul class="nav nav-pills nav-justified" style="padding-top: 10px;">
             {% if request.get_full_path == '/about/' %}
               <li class="nav-item"><a class="nav-link active" href="/about/">About</a></li>
@@ -39,7 +40,7 @@
     </div>
 
     <!-- Navigation for Mobile -->
-    <nav class="hidden-md-up navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <nav class="hidden-md-up navbar navbar-toggleable-md navbar-inverse bg-inverse sticky-top" style="margin-bottom: 10px;">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -82,9 +83,9 @@
           {% endif %}  
             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product</a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">
-              <a class="dropdown-item" href="/product/#designMobile">Design</a>
-              <a class="dropdown-item" href="/product/#metalsMobile">Metals</a>
-              <a class="dropdown-item" href="/product/#stonesMobile">Stones</a>
+              <a class="dropdown-item" href="/product/#design">Design</a>
+              <a class="dropdown-item" href="/product/#metals">Metals</a>
+              <a class="dropdown-item" href="/product/#stones">Stones</a>
             </div>
           </li>
           {% if request.get_full_path == '/services/' %}
@@ -94,8 +95,8 @@
           {% endif %} 
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="/services/#watch-repair-mobile">Watches</a>
-              <a class="dropdown-item" href="/services/#jewellery-repair-mobile">Jewellery</a>
+              <a class="dropdown-item" href="/services/#watch-repair">Watches</a>
+              <a class="dropdown-item" href="/services/#jewellery-repair">Jewellery</a>
             </div>
           </li>
           {% if request.get_full_path == '/anniversary-gift-list/' %}
@@ -105,8 +106,8 @@
           {% endif %}
           <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Anniversary Gift List</a>
             <div class="dropdown-menu" aria-labelledby="dropdown05">
-              <a class="dropdown-item" href="/anniversary-gift-list/#traditionalMobile">Traditional</a>
-              <a class="dropdown-item" href="/anniversary-gift-list/#jewelleryMobile">Jewellery</a>
+              <a class="dropdown-item" href="/anniversary-gift-list/#traditional">Traditional</a>
+              <a class="dropdown-item" href="/anniversary-gift-list/#jewellery">Jewellery</a>
             </div>
           </li>
           {% if request.get_full_path == '/about/' %}
@@ -122,10 +123,11 @@
         </ul>
       </div>
     </nav>
+
 <!-- Navigation for Desktop and Tablet -->
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col hidden-sm-down">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 hidden-sm-down">
             <nav class="nav flex-column">
               {% if request.get_full_path == '/' %}
                 <a class="nav-link active" href="/">Home</a>
@@ -226,46 +228,50 @@
               </div>
             </nav>
           </div>
-          {% block content %}{% endblock %}
-        </div>
-    </div>
+          <div class="col-12 col-md-9">
+            {% block content %} {% endblock %}
+          </div>
+  </div>
+</div>
+
     <br>
-    <div class="container-fluid">
-      <div class="row footer-div">
-        <div class="col-md-12">
-          <div class="container">
-            <div class="row">
-              <div class="col text-center">
-                <a href="#top_page"><span class="fa fa-angle-double-up fa-2x"></span></a>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-md-6">
-                <a href="/contact/" class="btn btn-outline-primary btn-block">
-                Contact Us&nbsp;&nbsp;<span class="fa fa-phone"></span>
-                &nbsp;&nbsp;<span class="fa fa-envelope-open"></span>
-                </a>
-                {% if request.get_full_path == '/signup-to-newsletter/' %}
-                <a href="/signup-to-newsletter/" class="btn btn-primary btn-block">
-                Sign up to our news letter&nbsp;&nbsp;<span class="fa fa-envelope-o"></span>
-                </a>
-                {% else %}
-                <a href="/signup-to-newsletter/" class="btn btn-outline-primary btn-block">
-                Sign up to our news letter&nbsp;&nbsp;<span class="fa fa-envelope-o"></span>
-                </a>
-                {% endif %}
-              </div>
-              <div class="col-md-6 text-center">
-                <br class="hidden-md-up">
-                <a href="https://www.facebook.com/MichaelsDesigns/"><span class="fa fa-facebook-official fa-3x"></span></a>
-                <p>Find us on Facebook</p>
-              </div>
-            </div>  
+
+<div class="container-fluid">
+  <div class="row footer-div">
+    <div class="col-12">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <a href="#top_page"><span class="fa fa-angle-double-up fa-2x"></span></a>
           </div>
         </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <a href="/contact/" class="btn btn-outline-primary btn-block">
+            Contact Us&nbsp;&nbsp;<span class="fa fa-phone"></span>
+            &nbsp;&nbsp;<span class="fa fa-envelope-open"></span>
+            </a>
+            {% if request.get_full_path == '/signup-to-newsletter/' %}
+            <a href="/signup-to-newsletter/" class="btn btn-primary btn-block">
+            Sign up to our news letter&nbsp;&nbsp;<span class="fa fa-envelope-o"></span>
+            </a>
+            {% else %}
+            <a href="/signup-to-newsletter/" class="btn btn-outline-primary btn-block">
+            Sign up to our news letter&nbsp;&nbsp;<span class="fa fa-envelope-o"></span>
+            </a>
+            {% endif %}
+          </div>
+          <div class="col-md-6 text-center">
+            <br class="hidden-md-up">
+            <a href="https://www.facebook.com/MichaelsDesigns/"><span class="fa fa-facebook-official fa-3x"></span></a>
+            <p>Find us on Facebook</p>
+          </div>
+        </div>  
       </div>
     </div>
+  </div>
+</div>
 
     <!-- Facebook JS SDK  -->
 
@@ -282,6 +288,7 @@
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="{% static 'vendor/bootstrap4/bower_components/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/javascript/custom.js' %}"></script>
     <script src="{% static 'vendor/bootstrap4/bower_components/tether/dist/js/tether.min.js' %}"></script>
     <script src="{% static 'vendor/bootstrap4/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'vendor/angular/bower_components/angular/angular.min.js' %}"></script>

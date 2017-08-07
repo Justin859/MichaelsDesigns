@@ -6,8 +6,6 @@
 {% block content %}
 
 <!-- Desktop and Tablet -->
-<div class="col-md-9 col-xs-12">
-<div class="col-md-9 hidden-md-up" style="margin-bottom: 60px;"></div>
     <div class="row">
         <div class="col">
         {% if messages %}
@@ -80,7 +78,7 @@
         </div>  
         <div class="col-md-6">
             <hr>
-            <form name="form" ng-submit="check(form.$valid)" action="" method="POST">
+            <form name="form" action="" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="full_name">Your Name</label>
@@ -94,12 +92,16 @@
                     <label for="query">Your Query</label>
                     <textarea type="textarea" name="client_query" class="form-control" maxlength="1001" placeholder="your query" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-outline-primary" ng-disabled="isDisabled"><i class="fa" id="submitIcon"></i><span id="submit">Send</span></button>
+                <button type="submit" class="btn btn-outline-primary"><i id="submitIcon"></i><span id="submit">Send</span></button>
             </form>
             <hr>
         </div>
     </div>
     <div class="col-md-9 hidden-md-up" style="margin-top: 50px"></div>
+</div>
+
+<div id="overlay" onclick="off()">
+  <div id="text"><div class="loader"></div></div>
 </div>
 
 <script>

@@ -6,7 +6,6 @@
 {% block content %}
 
 <!-- Desktop and Tablet -->
-<div class="col-md-9 hidden-sm-down">
     <div class="row">
         <div class="col">
             <h1 class="text-center display-4">{{brand.brand_name}}</h1>
@@ -22,19 +21,4 @@
             <hr>
         </div>
     </div>
-</div>
-<!-- Mobile -->
-<div class="hidden-md-up col-xs-12" style="margin-top: 60px;">
-    <div class="container-fluid">
-        <h1 class="text-center display-4">{{brand.brand_name}}</h1>
-        <hr>
-            <img src="{% static 'designs' %}/{{brand.brand_main_photo|img_src}}" class="img-fluid img-thumbnail">
-        <hr>
-        <br />
-        <blockquote class="blockquote">{{brand.brand_description}}</blockquote>
-        <br />
-            <img src="{% static 'designs' %}/{{brand.brand_logo|img_src}}" class="img-fluid img-thumbnail">
-        <hr>
-    </div>
-</div>
 {% endblock %}
