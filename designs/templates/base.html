@@ -141,7 +141,7 @@
               {% endif %}
               <div class="collapse" id="collapsePremierBrands">
                 <div class="card">
-                  <ul class="list-group list-group-flush">
+                  <ul class="list-group">
                     {% for brand in premier_brands %}
                     <li class="list-group-item"><a href="/premier-brand/{{brand.brand_name}}/">{{brand.brand_name}}</a></li>
                     {% endfor %}
@@ -155,7 +155,7 @@
               {% endif %}
               <div class="collapse" id="collapseProduct">
                 <div class="card">
-                  <ul class="list-group list-group-flush">
+                  <ul class="list-group">
                     <li class="list-group-item"><a href="/product/#design">Design</a></li>
                     <li class="list-group-item"><a href="/product/#metals">Metals</a></li>
                     <li class="list-group-item"><a href="/product/#stones">Stones</a></li>
@@ -169,7 +169,7 @@
               {% endif %}
               <div class="collapse" id="collapseRepairs">
                 <div class="card">
-                  <ul class="list-group list-group-flush">
+                  <ul class="list-group">
                     <li class="list-group-item"><a href="/services/#watch-repair">Watches</a></li>
                     <li class="list-group-item"><a href="/services/#jewellery-repair">Jewellery</a></li>
                   </ul>
@@ -182,7 +182,7 @@
               {% endif %}
               <div class="collapse" id="collapseAnniversary">
                 <div class="card">
-                  <ul class="list-group list-group-flush">
+                  <ul class="list-group">
                     <li class="list-group-item"><a href="/anniversary-gift-list/#traditional">Traditional</a></li>
                     <li class="list-group-item"><a href="/anniversary-gift-list/#jewellery">Jewellery</a></li>
                   </ul>
@@ -191,7 +191,7 @@
               <a class="nav-link" href="#collapseBirthStones" data-toggle="collapse" aria-expanded="false">Birth Stones&nbsp;&nbsp;<span class="fa fa-angle-down"></span></a>
               <div class="collapse" id="collapseBirthStones">
                 <div class="card">
-                  <ul class="list-group list-group-flush">
+                  <ul class="list-group">
                     {% for stone in birthstones %}
                     <li class="list-group-item"><a href="#" data-toggle="modal" data-target={{stone.stone_name|add_id}}>{{stone.stone_month|month_finder}} - {{stone.stone_name}}</a></li>
                     <!-- Modal -->
@@ -272,8 +272,6 @@
     </div>
   </div>
 </div>
-
-    <!-- Facebook JS SDK  -->
 
     <div id="fb-root"></div>
     <script>

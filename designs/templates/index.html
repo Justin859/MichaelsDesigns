@@ -73,8 +73,82 @@
     </div>
 </div>
 
+{% if new_arrivals %}
 <div class="row">
     <div class="col-12">
+        <h3>New Arrivals</h3>
+    <hr>
+    <br>
+    </div>
+</div>
+
+
+<div class="row">
+
+{% for arrival in new_arrivals %}
+    <div class="col-12 col-md-6">
+        <div class="card" style="margin: 0.5rem">
+        <img class="card-img-top img-fluid" src="{% static 'designs' %}/{{arrival.new_arrival_photo|img_src}}" alt="Card image cap">
+        <div class="card-block">
+            <h4 class="card-title">{{arrival.new_arrival_name}}</h4>
+            <p class="card-text">{{arrival.new_arrival_description|markdown_to_html}}</p>
+        </div>
+        </div>    
+    </div> 
+
+{% endfor %}
+</div>
+{% endif %}
+
+<div class="row hidden-md-up">
+    <div class="col-12">
+        <hr>
+        <h3>Find Your Birth Stone</h3>
+        <hr>
+        <div class="card">
+            <div class="card-header">
+                Birth Stones
+            </div>
+            <ul class="list-group">
+                {% for stone in birthstones %}
+                <li class="list-group-item"><a href="#" data-toggle="modal" data-target={{stone.stone_month|add_id}}>{{stone.stone_month|month_finder}} - {{stone.stone_name}}</a></li>            
+                    <!-- Modal -->
+                    <div class="modal fade" id={{stone.stone_month}} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id={{stone.stone_name}}>{{stone.stone_name}} &middot; Month &minus; {{stone.stone_month|month_finder}}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="row">
+                              <div class="col-md-4"></div>
+                              <div class="col"><img src="{% static 'designs' %}/{{stone.stone_photo|img_src}}" class="img-fluid"></div>
+                            </div>
+                            <div class="row">
+                              <div class="col">{{stone.description|markdown_to_html}}</div>
+                            </div>
+                            <div class="row">
+                              <div class="col">{{stone.cleaning_tips|markdown_to_html}}</div>
+                            </div> 
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <br>
         <h3>Michael's Designs Social Feed</h3>
     <hr>
     <br>
@@ -85,7 +159,7 @@
     <div class="col-12 col-lg-6" style="margin-bottom: 25px;">
         <div id="post">
             <div 
-                style="overflow-x: auto; max-width: 100%;";
+                style="overflow-x: auto; overflow-y: hidden; max-width: 100%;";
                 class="fb-post"
                 data-width="auto"
                 data-href="{{facebook_feed.0}}">
@@ -96,7 +170,7 @@
     <div class="col-12 col-lg-6" style="margin-bottom: 25px;">
         <div id="post">
             <div 
-                style="overflow-x: auto; max-width: 100%;";
+                style="overflow-x: auto; overflow-y: hidden; max-width: 100%;";
                 class="fb-post"
                 data-width="auto"
                 data-href="{{facebook_feed.1}}">
@@ -107,7 +181,7 @@
     <div class="col-12 col-lg-6" style="margin-bottom: 25px;">
         <div id="post">
             <div 
-                style="overflow-x: auto; max-width: 100%;";
+                style="overflow-x: auto; overflow-y: hidden; max-width: 100%;";
                 class="fb-post"
                 data-width="auto"
                 data-href="{{facebook_feed.2}}">
@@ -118,7 +192,7 @@
     <div class="col-12 col-lg-6" style="margin-bottom: 25px;">
         <div id="post">
             <div 
-                style="overflow-x: auto; max-width: 100%;";
+                style="overflow-x: auto; overflow-y: hidden; max-width: 100%;";
                 class="fb-post"
                 data-width="auto"
                 data-href="{{facebook_feed.3}}">
@@ -127,8 +201,5 @@
     </div>
 
 </div>
-
-
-
 
 {% endblock %}

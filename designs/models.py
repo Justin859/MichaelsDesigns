@@ -29,7 +29,7 @@ class Premier_Brands(models.Model):
     brand_name = models.CharField(max_length=255, primary_key=True)
     brand_main_photo = models.ImageField(upload_to='designs/static/images/premier_brands/brand_main_photo', max_length=255, null=True)
     brand_logo = models.ImageField(upload_to='designs/static/images/premier_brands/brand_logo', max_length=255, null=True)
-    brand_description = models.TextField()
+    brand_description = models.TextField(max_length=1001)
     
 
     class Meta:
@@ -58,3 +58,14 @@ class ClientForm(ModelForm):
         model = ClientQuery
         fields = ['full_name', 'email_address', 'client_query']
 
+class NewArrivals(models.Model):
+    new_arrival_name = models.CharField(max_length=255)
+    new_arrival_photo = models.ImageField(upload_to='designs/static/images/new_arrivals', max_length=255)
+    new_arrival_description = models.TextField(max_length=1001)
+    created_at = models.DateField(auto_now_add=True, editable=False)
+    class Meta:
+        verbose_name = 'New Arrival'
+        verbose_name_plural = 'New Arrivals'
+
+    def __str__(self):
+        return self.new_arrival_name    
