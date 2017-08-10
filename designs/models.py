@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.timezone import datetime
-from models import *
+from designs.models import *
 from django.forms import ModelForm
 # Create your models here.
 
