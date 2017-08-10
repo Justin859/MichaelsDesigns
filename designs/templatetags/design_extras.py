@@ -1,5 +1,6 @@
 from django import template
 from django.utils.safestring import mark_safe
+from designs.models import CarouselSlides
 import markdown2
 
 register = template.Library()
@@ -24,6 +25,12 @@ def markdown_to_html(markdown_text):
 def path_single(main_path):
     '''Gets main path of url path'''
     return main_path.split('/')[1]
+
+@register.filter('check_slides')
+def check_slides(slides, arg):
+    slides = CarouselSlides.objects.filter(slide_for=arg)
+    return slides 
+
 
 @register.filter(name="month_finder")
 def month_finder(value):

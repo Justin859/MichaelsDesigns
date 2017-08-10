@@ -21,10 +21,12 @@ def add_variable_to_context(request):
     birthstones = Birth_Stones.objects.order_by('stone_month')
     premier_brands = Premier_Brands.objects.order_by('brand_name')
     new_arrivals = NewArrivals.objects.order_by('created_at')
+    carousel_slides = CarouselSlides.objects.order_by('created_at')
 
     return {
         'birthstones': birthstones,
         'premier_brands': premier_brands,
+        'carousel_slides': carousel_slides,
         'new_arrivals': new_arrivals, 
         'facebook_feed': facebook_feed,  
     }
