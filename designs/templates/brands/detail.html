@@ -8,8 +8,8 @@
 <!-- Desktop and Tablet -->
 
     <div class="row">
+    {% if carousel_slides|check_slides:brand.brand_name %}
         <div class="col-12">
-            {% if carousel_slides|check_slides:brand.brand_name %}
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                 {% for slide in carousel_slides|check_slides:brand.brand_name %}
