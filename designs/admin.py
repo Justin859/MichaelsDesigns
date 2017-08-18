@@ -1,5 +1,5 @@
 from django.contrib import admin
-from designs.models import Birth_Stones, Premier_Brands, ClientQuery, NewArrivals, CarouselSlides
+from designs.models import Birth_Stones, Premier_Brands, ClientQuery, NewArrivals, CarouselSlides, Services
 from django import forms
 # Register your models here.
 
@@ -34,7 +34,7 @@ class CarouselSlidesAdmin(admin.ModelAdmin):
     form = CarouselSlidesForm
     fields = ('slide_name', 'slide_image', 'slide_for', 'first_slide')
 
-
+admin.site.register(Services)
 admin.site.register(Birth_Stones)
 admin.site.register(Premier_Brands)
 admin.site.register(ClientQuery)

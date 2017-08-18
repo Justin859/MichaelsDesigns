@@ -31,6 +31,13 @@ def check_slides(slides, arg):
     slides = CarouselSlides.objects.filter(slide_for=arg)
     return slides 
 
+@register.filter('make_id')
+def make_id(value):
+    if ' ' in value:
+        value = '-'.join(value.split(' '))
+        return value
+    else:
+        return value
 
 @register.filter(name="month_finder")
 def month_finder(value):

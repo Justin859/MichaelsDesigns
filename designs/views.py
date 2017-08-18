@@ -6,7 +6,7 @@ sys.path.append('./gettingstarted/')
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
-
+from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
 from .forms import NewsletterForm
 from .models import Birth_Stones, Premier_Brands, ClientQuery, ClientForm
@@ -16,15 +16,15 @@ from secret_keys import *
 
 def index(request):
 
-    return render(request, 'index.html', {})
+    return render(request, 'index.html')
 
 def about(request):
 
-    return render(request, 'details/about.html', {})
+    return render(request, 'details/about.html')
 
 def product(request):
 
-    return render(request, 'details/product.html', {})
+    return render(request, 'details/product.html')
 
 def contact(request):
     birthstones = Birth_Stones.objects.order_by('stone_month')
@@ -88,8 +88,8 @@ def detail(request, premier_brand_name):
 
 def services(request):
 
-    return render(request, 'repairs/services.html', {})
+    return render(request, 'repairs/services.html')
 
 def anniversary(request):
     
-    return render(request, 'anniversary.html', {})
+    return render(request, 'anniversary.html')

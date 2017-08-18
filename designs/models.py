@@ -89,6 +89,7 @@ class CarouselSlides(models.Model):
         verbose_name = 'Carousel Slide'
         verbose_name_plural = 'Carousel Slides'
         ordering = ['slide_for']
+
     def __str__(self):
         is_first_slide = ''
 
@@ -96,3 +97,17 @@ class CarouselSlides(models.Model):
             is_first_slide = ' | First Slide'
 
         return self.slide_for + ' | ' + self.slide_name + is_first_slide
+
+class Services(models.Model):
+    service_name = models.CharField(max_length=255)
+    service_main_image = models.ImageField(upload_to='designs/static/images/services/main', max_length=255)
+    service_description = models.TextField(max_length=1001)
+    service_second_image = models.ImageField(upload_to='designs/static/images/services/second', max_length=255)
+
+    class Meta:
+        verbose_name = 'Service'
+        verbose_name_plural = 'Services'
+        ordering = ['service_name']
+    
+    def __str__(self):
+        return self.service_name

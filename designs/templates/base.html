@@ -95,8 +95,14 @@
           {% endif %} 
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
+              {% if services %}
+              {% for service in services %}
+              <a class="dropdown-item" href="/services/#{{service.service_name|make_id}}">{{service.service_name}}</a>
+              {% endfor %}
+              {% else %}
               <a class="dropdown-item" href="/services/#watch-repair">Watches</a>
               <a class="dropdown-item" href="/services/#jewellery-repair">Jewellery</a>
+              {% endif %}
             </div>
           </li>
           {% if request.get_full_path == '/anniversary-gift-list/' %}
@@ -170,8 +176,14 @@
               <div class="collapse" id="collapseRepairs">
                 <div class="card">
                   <ul class="list-group">
+                    {% if services %}
+                    {% for service in services %}
+                    <li class="list-group-item"><a href="/services/#{{service.service_name|make_id}}">{{service.service_name}}</a></li>
+                    {% endfor %}
+                    {% else %}
                     <li class="list-group-item"><a href="/services/#watch-repair">Watches</a></li>
                     <li class="list-group-item"><a href="/services/#jewellery-repair">Jewellery</a></li>
+                    {% endif %}
                   </ul>
                 </div>
               </div>

@@ -5,6 +5,46 @@
 
 {% block content %}
 
+{% if services %}
+
+{% for service in services %}
+
+<div id="{{service.service_name|make_id}}">
+    </div>
+    <br>
+    
+    <div class="row">
+        <div class="col">
+            <img src="{% static 'designs' %}/{{service.service_main_image|img_src}}" class="img-fluid">
+        </div>
+    </div>
+    
+    <br>
+    <div class="row">
+        <div class="col text-center">
+            <h2>{{service.service_name}}</h2>
+        </div>
+    </div>
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <br>
+            <img src="{% static 'designs' %}/{{service.service_second_image|img_src}}" class="img-fluid img-thumbnail">
+        </div>
+        <div class="col-md-6">
+            <br>
+            {{service.service_description|markdown_to_html}}
+        </div>
+    </div>
+    
+        <br>
+        <hr class="hidden-md-down">
+
+{% endfor %}
+
+{% else %}
+
 <div id="watch-repair">
 </div>
 <br>
@@ -74,6 +114,6 @@
     <br>
     <hr>
     <br>
-
+{% endif %}
 
 {% endblock %}
