@@ -1,0 +1,21 @@
+{
+    "@context": "http://schema.org",
+    "@type": "Store",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Fourways",
+      "addressRegion": "Gauteng",
+      "postalCode": "2055",
+      "streetAddress": "Shop G 87, Ground Floor, Fourways Mall, Corner Of William Nicol & Witkoppen Roads, Ruby Cl, Fourways, Sandton, 2055, South Africa"
+    },
+    "name": "Michael's Designs Jewellery",
+    "alternateName": "michaels designs",
+    "openingHours": [
+      "Mo-Sa 9:00-17:00"
+    ],
+    "telephone": "(011) 465 6446/7",
+    "url": "https://www.michaelsdesigns.co.za",
+    "logo": "https://michaelsdesignsza.s3.amazonaws.com/images/michaels_designs/logo_2.png",
+    "makesOffer": "Product",
+    "description": "Michael’s Designs is an exclusive jewellery store situated in Fourways Mall"
+  }

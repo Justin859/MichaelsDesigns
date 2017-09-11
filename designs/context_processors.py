@@ -7,7 +7,7 @@ from .models import *
 # Facebook Feed from Graphs API
 
 access_token = json.loads(requests.get(
-    "https://graph.facebook.com/oauth/access_token?client_id=" + os.environ.get('CLIENT_ID') + "&client_secret=08f0ca27a2a4a5ee11e9a3552ad431e7&grant_type=client_credentials").content.decode('utf-8'))['access_token']
+    "https://graph.facebook.com/oauth/access_token?client_id=" + os.environ.get('CLIENT_ID') + "&client_secret=" + os.environ.get('FB_APP_SECRET')  + "&grant_type=client_credentials").content.decode('utf-8'))['access_token']
 
 results = json.loads(requests.get(
     "https://graph.facebook.com/1476124115964835/feed?fields=permalink_url&limit=4&access_token=" + access_token).content.decode('utf-8'))['data']
