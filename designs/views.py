@@ -9,14 +9,30 @@ from django.contrib import messages
 from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
 from .forms import NewsletterForm
-from .models import Birth_Stones, Premier_Brands, ClientQuery, ClientForm
+from .models import Birth_Stones, Premier_Brands, ClientQuery, ClientForm, NewArrivals
 from gettingstarted import secret_keys
 from secret_keys import *
+import json
+import requests
+import os
+
 # Create your views here.
 
 def index(request):
+    new_arrivals = NewArrivals.objects.order_by('created_at')
 
-    return render(request, 'index.html')
+    access_token = json.loads(requests.get(
+        "https://graph.facebook.com/oauth/access_token?client_id=" + os.environ.get('CLIENT_ID') + "&client_secret=" + os.environ.get('FB_APP_SECRET')  + "&grant_type=client_credentials").content.decode('utf-8'))['access_token']
+
+    results = json.loads(requests.get(
+        "https://graph.facebook.com/1476124115964835/feed?fields=permalink_url&limit=4&access_token=" + access_token).content.decode('utf-8'))['data']
+
+    facebook_feed = []
+
+    for post in results:
+        facebook_feed.append(post["permalink_url"])
+
+    return render(request, 'index.html', {'new_arrivals': new_arrivals, 'facebook_feed': facebook_feed})
 
 def about(request):
 
